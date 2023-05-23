@@ -3,4 +3,17 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
+Console.WriteLine("Введите число: ");
+int Number = int.Parse(Console.ReadLine());
 
+if (Number > 99)
+{
+    while ()
+    {
+
+    }
+}
+else
+{
+    Console.WriteLine("Третьей цифры нет");
+}
