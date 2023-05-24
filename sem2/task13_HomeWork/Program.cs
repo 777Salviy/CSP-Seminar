@@ -52,14 +52,3 @@ if (ValidateNumber (number))
 }
 
 
-
-// Console.WriteLine("Введите число ");
-// int num = Convert.ToInt32(Console.ReadLine());
-// int i = Convert.ToInt32(Math.Log10(num));
-// Console.WriteLine($"Разрядность числа - {i}");
-// int stepen = i;
-// int num1 = Convert.ToInt32(Math.Pow(10, stepen));
-// int num2 = num / num1;
-// int num3 = Convert.ToInt32(Math.Pow(10, stepen - 1));
-// int num4 = num % num3;
-// Console.WriteLine($"Полученное чисо - {num2}{num4}");
