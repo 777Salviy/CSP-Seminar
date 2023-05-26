@@ -22,20 +22,25 @@
 
 // Второй вариант
 
-// Console.WriteLine("Введите число: ");
-// int Number = int.Parse(Console.ReadLine());
+Console.WriteLine("Введите число: ");
+int Number = int.Parse(Console.ReadLine());
 
-// if (Number > 99)
-// {
-//     // int stepen = Convert.ToInt32 (Math.Log10 (Number));
-//     int ThreeDigitOrderNumber = Number / 10;
-//     int ThirdDigitOfNumber = ThreeDigitOrderNumber % 10;
-//     Console.WriteLine("Третья цифра = " + ThirdDigitOfNumber);
-// }
-// else
-// {
-//     Console.WriteLine("Третьей цифры нет");
-// }
+if (Number > 99)
+{
+    int stepen = Convert.ToInt32(Math.Log10(Number));
+    int stepenMinus = 1;
+    for (int i = stepen; i > 2; i -= 1)
+    {
+        stepenMinus = i * 10;
+    }
+    int ThreeDigitOrderNumber = Number / 10;
+    int ThirdDigitOfNumber = ThreeDigitOrderNumber % 10;
+    Console.WriteLine("Третья цифра = " + ThirdDigitOfNumber);
+}
+else
+{
+    Console.WriteLine("Третьей цифры нет");
+}
 
 // Идеальное решение от Geekbrains
 
@@ -74,37 +79,37 @@
 // }
 
 
-int number = ReadInt("Введите число: ");
-int count = number.ToString().Length;
-Console.Write(MakeArray(number, count));
+// int number = ReadInt("Введите число: ");
+// int count = number.ToString().Length;
+// Console.Write(MakeArray(number, count));
 
 
-int ReadInt(string message)
-{
-    Console.Write(message);
-    return Convert.ToInt32(Console.ReadLine());
-}
+// int ReadInt(string message)
+// {
+//     Console.Write(message);
+//     return Convert.ToInt32(Console.ReadLine());
+// }
 
 
-int MakeArray(int a, int b)
-{
-    int result = 0;
-    if (b < 3)
-    {
-        Console.Write("Третьей цифры нет, держи: ");
-    }
-    else
-    {
-        int c = 1;
-        for (int i = b; i > 3; i--)
-        {
-            c = c * 10;
-        }
+// int MakeArray(int a, int b)
+// {
+//     int result = 0;
+//     if (b < 3)
+//     {
+//         Console.Write("Третьей цифры нет, держи: ");
+//     }
+//     else
+//     {
+//         int c = 1;
+//         for (int i = b; i > 3; i--)
+//         {
+//             c = c * 10;
+//         }
 
-        result = (a / c) % 10;
-    }
-    return result;
-}
+//         result = (a / c) % 10;
+//     }
+//     return result;
+// }
 
 
 
