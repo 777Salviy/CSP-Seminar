@@ -3,46 +3,46 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-//Первый вариант
 
-// Console.WriteLine("Введите число ");
-// int num = Convert.ToInt32(Console.ReadLine());
-// int i = Convert.ToInt32(Math.Log10(num));
-// Console.WriteLine($"Разрядность числа - {i}");
-// int stepen = i;
-// int num1 = Convert.ToInt32(Math.Pow(10, stepen));
-// Console.WriteLine($"num1 = {num1}");
-// int num2 = num / num1;
-// Console.WriteLine($"num2 = {num2}");
-// int num3 = Convert.ToInt32(Math.Pow(10, stepen - 1));
-// Console.WriteLine($"num3 = {num3}");
-// int num4 = num % num3;
-// Console.WriteLine($"num4 = {num4}");
-// Console.WriteLine($"Полученное чисо - {num2}{num4}");
-
-// Второй вариант
+// 1. Мой вариант
 
 Console.WriteLine("Введите число: ");
 int Number = int.Parse(Console.ReadLine());
 
 if (Number > 99)
 {
-    int stepen = Convert.ToInt32(Math.Log10(Number));
-    int stepenMinus = 1;
-    for (int i = stepen; i > 2; i -= 1)
-    {
-        stepenMinus = i * 10;
-    }
-    int ThreeDigitOrderNumber = Number / 10;
+    int stepen = (int)Math.Log10(Number);
+    int stepen10Minus = (int)Math.Pow(10, stepen - 2);
+    int ThreeDigitOrderNumber = Number / stepen10Minus;
     int ThirdDigitOfNumber = ThreeDigitOrderNumber % 10;
-    Console.WriteLine("Третья цифра = " + ThirdDigitOfNumber);
+    Console.WriteLine($"Третья цифра числа {Number} - {ThirdDigitOfNumber}");
 }
 else
 {
     Console.WriteLine("Третьей цифры нет");
 }
 
-// Идеальное решение от Geekbrains
+// 2. Мой неправильный вариант. Вопрос??? Как работает "int stepen = Convert.ToInt32(Math.Log10(Number));" каким образом происходит округление? так при попытке вычислить логорифм 10 из одинаково-разрядных чисел (например 123456 и 789456) получаются разные значения (5 и 6 соответственно), что естественно приводит к неверному решению.
+
+// Console.WriteLine("Введите число: ");
+// int Number = int.Parse(Console.ReadLine());
+
+// if (Number > 99)
+// {
+//     int stepen = Convert.ToInt32(Math.Log10(Number));
+//     Console.WriteLine($"stepen = {stepen}");
+//     int stepenMinus = Convert.ToInt32(Math.Pow(10, stepen - 2));
+//     int ThreeDigitOrderNumber = Number / stepenMinus;
+//     Console.WriteLine("ThreeDigitOrderNumber = " + ThreeDigitOrderNumber);
+//     int ThirdDigitOfNumber = ThreeDigitOrderNumber % 10;
+//     Console.WriteLine("Третья цифра = " + ThirdDigitOfNumber);
+// }
+// else
+// {
+//     Console.WriteLine("Третьей цифры нет");
+// }
+
+// 3. Идеальное решение от Geekbrains
 
 // int Prompt (string message)
 // {
@@ -111,7 +111,7 @@ else
 //     return result;
 // }
 
-
+// Решение через строку
 
 // var stringNumber = "0003"; // var - ключевое слово, определяет тип данных 
 // int number; // Если строчка состоит только из чисел,
