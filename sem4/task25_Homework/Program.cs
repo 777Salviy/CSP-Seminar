@@ -10,10 +10,10 @@ Console.WriteLine("Введите степень числа: ");
 int numberPower = Convert.ToInt32(Console.ReadLine());
 
 int powerCount = 0;
-
-while (powerCount <= numberPower)
+int result = 1;
+while (powerCount < numberPower)
 {
-    numberA *= numberA;
+    result = result * numberA;
     powerCount++;
 }
-Console.WriteLine($"{numberA}");
+Console.WriteLine($"Число {numberA} в степени {numberPower} равняется {result}");
