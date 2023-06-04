@@ -32,3 +32,4 @@ Console.WriteLine($"Массив: [ {String.Join("; ", Array)} ]");
 
 int EvenNumber = IndicateEven(Array);
 Console.WriteLine($"Колличество четных чисел в массиве составляет: {EvenNumber}");
+
