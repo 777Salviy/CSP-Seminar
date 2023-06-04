@@ -38,3 +38,18 @@ double[] CreateArray2(int size)
 
 double[] Array2 = CreateArray2(10);
 Console.WriteLine($"Массив: [ {String.Join("; ", Array2)} ]");
+
+double MaxNumber(double[] arrmax)
+{
+    double max = arrmax[0];
+    int i = 0;
+    while (i < arrmax.Length)
+    {
+        if (arrmax[i] > max) max = arrmax[i];
+        i++;
+    }
+    return max;
+}
+
+double MaxArrayNumber = MaxNumber(Array2);
+Console.WriteLine($"Максимальное число массива = {MaxArrayNumber}");
