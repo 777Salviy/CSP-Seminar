@@ -68,3 +68,12 @@ double MinNumber (double[] arrmin)
 
 double MinArrayNumber = MinNumber(Array2);
 Console.WriteLine($"Минимальное число массива = {MinArrayNumber}");
+
+double DivergenceMinMax (double Min, double Max)
+{
+    double DivergenceResult = Max - Min;
+    return DivergenceResult;
+}
+
+double Result = DivergenceMinMax(MinArrayNumber, MaxArrayNumber);
+Console.WriteLine($"Разница между минимаьным и максимальным элементами массива = {Result}");
