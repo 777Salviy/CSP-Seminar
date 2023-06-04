@@ -8,7 +8,7 @@ int[] CreateArray(int lenghts)
     int[] NewArray = new int[lenghts];
     for (int i = 0; i < NewArray.Length; i++)
     {
-        NewArray[i] = new Random().Next(1, 19 + 1);
+        NewArray[i] = new Random().Next(1, 9 + 1);
     }
     return NewArray;
 }
