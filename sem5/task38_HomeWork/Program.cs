@@ -20,7 +20,7 @@
 // Console.WriteLine($"Массив: [ {String.Join("; ", Array)} ]");
 
 // 2-ой вариант. Метод создания массива вещественных 
-// чисел со строго установленными границами
+// чисел с возможностью точно устанавливать границы диапазона 
 
 double[] CreateArray2(int size)
 {
@@ -53,3 +53,18 @@ double MaxNumber(double[] arrmax)
 
 double MaxArrayNumber = MaxNumber(Array2);
 Console.WriteLine($"Максимальное число массива = {MaxArrayNumber}");
+
+double MinNumber (double[] arrmin)
+{
+    double min = arrmin[0];
+    int i = 0;
+    while (i < arrmin.Length)
+    {
+        if (arrmin[i] < min) min = arrmin[i];
+        i++;
+    }
+    return min;
+}
+
+double MinArrayNumber = MinNumber(Array2);
+Console.WriteLine($"Минимальное число массива = {MinArrayNumber}");
