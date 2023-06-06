@@ -1,2 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Задача 40: Напишите программу, которая принимает на вход три числа и проверяет,
+//  может ли существовать треугольник с сторонами такой длины.
+// Теорема о неравенстве треугольника: каждая сторона треугольника меньше суммы двух других сторон.
+int a = 3;
+int b = 4;
+int c = 5;
+
+bool IsTriangle(int a, int b, int c)
+{
+    return (((a + b) > c) && ((b + c) > a) && ((a + c) > b));
+}
+if (IsTriangle(a, b, c)) //IsTriangle(a, b, c) == True
+{
+    Console.WriteLine("Треугольник существует");
+}
+else
+{
+    Console.WriteLine("Треугольник НЕ существует");
+}
