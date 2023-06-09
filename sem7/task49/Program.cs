@@ -20,7 +20,7 @@ int[,] GetMatrix(int m, int n, int min, int max)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = i + j;
+            matrix[i, j] = new Random().Next(1, 10);
         }
     }
     return matrix;
@@ -48,7 +48,7 @@ int[,] NewMatrix(int[,] newArray)
     {
         for (int j = 0; j < newArray.GetLength(1); j++)
         {
-            if (i % 2 == 0 && j % 2 == 0)
+            if (i % 2 == 0 && i > 0 && j % 2 == 0 && j > 0)
             {
                 newArray[i, j] = (int)Math.Pow(newArray[i, j], 2);
             }
