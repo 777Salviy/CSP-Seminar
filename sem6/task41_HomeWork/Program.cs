@@ -9,7 +9,7 @@ int[] GetArray(int size)
     int[] array = new int[size];
     for (int i = 0; i < array.Length; i++)
     {
-        
+        Console.WriteLine($"Введите {i + 1} элемент массива: ");
         array[i] = Convert.ToInt32(Console.ReadLine());
     }
     return array;
