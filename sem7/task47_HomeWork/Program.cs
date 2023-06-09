@@ -5,3 +5,43 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
+double[,] GetMatrix(int m, int n, double LowerLimit, double UpperLimit)
+{
+    double[,] matrix = new double[m, n];
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            matrix[i, j] = LowerLimit + (new Random().NextDouble() * (UpperLimit - LowerLimit));
+            matrix[i, j] = Math.Round(matrix[i, j], 2);
+        }
+    }
+    return matrix;
+}
+
+void PrintMatrix(double[,] array2D)
+{
+    for (int i = 0; i < array2D.GetLength(0); i++)
+    {
+        for (int j = 0; j < array2D.GetLength(1); j++)
+        {
+            Console.Write(array2D[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
+}
+
+Console.Write("Введите количество строк: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите количество cтолбцов: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Введите нижний лимит: ");
+double lower = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("Введите верхний лимит: ");
+double upper = Convert.ToDouble(Console.ReadLine());
+
+double[,] resultMatrix = GetMatrix(rows, columns, lower, upper);
+PrintMatrix(resultMatrix);
