@@ -19,7 +19,23 @@ int[,] FillMatrix(int n, int m, int min, int max)
     return matrix;
 }
 
-void PrintMatrix()
+void PrintMatrix(int[,] matrix2D)
 {
-
+    for (int i = 0; i < matrix2D.GetLength(0); i++)
+    {
+        for (int j = 0; j < matrix2D.GetLength(1); j++)
+        {
+            Console.Write(matrix2D[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
 }
+
+Console.WriteLine("Введите количество строк: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Введите количество столбцов: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+int[,] newMatrix = FillMatrix(rows, columns, 1, 20);
+PrintMatrix(newMatrix);
