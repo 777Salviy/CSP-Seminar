@@ -39,3 +39,39 @@ int columns = Convert.ToInt32(Console.ReadLine());
 
 int[,] newMatrix = FillMatrix(rows, columns, 1, 20);
 PrintMatrix(newMatrix);
+
+void ColumnSum(int[,] madeMatrix)
+{
+    int rows = madeMatrix.GetLength(0);
+    int cols = madeMatrix.GetLength(1);
+
+    double[] columnSums = new double[cols]; // Массив для хранения суммы элементов в каждом столбце
+
+    // Вычисление суммы элементов в каждом столбце
+    for (int j = 0; j < cols; j++)
+    {
+        for (int i = 0; i < rows; i++)
+        {
+            columnSums[j] += madeMatrix[i, j];
+        }
+    }
+
+    // Вычисление среднего арифметического для каждого столбца
+    double[] columnAverages = new double[cols];
+    for (int j = 0; j < cols; j++)
+    {
+        columnAverages[j] = columnSums[j] / rows;
+    }
+
+    // Вывод среднего арифметического для каждого столбца
+    for (int j = 0; j < cols; j++)
+    {
+        Console.Write(Math.Round (columnAverages[j], 2));
+        if (j < cols - 1)
+        {
+            Console.Write(";\t");
+        }
+    }
+}
+
+ColumnSum(newMatrix);
