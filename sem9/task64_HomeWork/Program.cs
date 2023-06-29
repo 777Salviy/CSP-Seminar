@@ -2,3 +2,13 @@
 // N = 5 -> "5, 4, 3, 2, 1"
 // N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 
+Console.WriteLine("Введите число: ");
+int N = Convert.ToInt32(Console.ReadLine());
+string GetNaturalNumbers (int start, int end)
+{
+if (start == end) return start.ToString();
+return start + ", " + GetNaturalNumbers(start - 1, end);
+}
+
+Console.WriteLine($"'{GetNaturalNumbers(N, 1)}'");
+
