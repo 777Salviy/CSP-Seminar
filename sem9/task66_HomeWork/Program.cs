@@ -11,8 +11,7 @@ int N = Convert.ToInt32(Console.ReadLine());
 
 int SumOfNumbersfromMtoN(int m, int n)
 {
-    if (m > n)
-        return 0;
+    if (m > n) return 0;
     return m + SumOfNumbersfromMtoN(m + 1, n);
 }
 
